@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/0baf971727.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class="container1">
+      <header class="header">
+        <div class="logo">
+          <span id="logo" class="fab fa-accusoft fa-2x"></span>
+          <h1>TODO!</h1>
+        </div>
+      </header>
+      <nav class="navbar">
+        <ul>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">
+              Date filter
+
+              <div class="dropdown-content">
+                <a id="filter-day">Day</a>
+                <a id="filter-week">Week</a>
+                <a id="filter-month"> Month</a>
+              </div>
+            </a>
+          </li>
+          <li class="dropdown">
+            <a class="dropbtn">
+              Sorting
+              <!-- priority , alphabetical, etc  -->
+              <div class="dropdown-content">
+                <a id="sort-priority">Priority</a>
+                <a id="sort-alpha">Alphabetical</a>
+              </div>
+            </a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">
+              Partner
+              <div id="partner" class="dropdown-content">
+                <a id="partner-0">All</a>
+              </div>
+            </a>
+          </li>
+          <div class="search">
+            <input type="text" name="search" id="search" placeholder="Search for tasks" />
+          </div>
+        </ul>
+      </nav>
+      <div class="box" id="box1">
+        <input type="text" id="box3" placeholder="Chat with us" />
+      </div>
+      <div class="container">
+        <div class="item" id="item-2">
+          <h4>
+            <b>Tasks</b>
+          </h4>
+          <ul class="task-list"></ul>
+        </div>
+        <div class="item" id="item-1">
+          <h2>Add Tasks</h2>
+          <form id="form">
+            <div class="button">
+              <label for="name"> Name: </label>
+              <input type="text" name="myName" id="myName" required />
+            </div>
+            <div class="button">
+              <label for="myText">Description: </label>
+              <br /><textarea id="myText" name="myText" cols="80%" rows="7"></textarea>
+            </div>
+            <div class="button">
+              Date:
+              <input type="date" name="myDate" id="myDate" />
+            </div>
+            <div class="button">
+              Time for reminder:
+              <input type="time" steps="0.001" name="myTime" id="myTime" />
+            </div>
+            <div>
+              <label for="myPartner">Name of task partner </label>
+              <input name="myPartner" id="myPartner" />
+            </div>
+            <div>
+              <label for="priority">Priority &nbsp;</label>
+              <select name="myPriority" id="myPriority">
+                <option value="1">High</option>
+                <option value="0" selected>Medium</option>
+                <option value="-1">Low</option>
+              </select>
+            </div>
+            <div>
+              <button id="submit">Submit!</button>
+              <button type="reset" id="reset">Reset!</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
