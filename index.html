@@ -10,101 +10,102 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/0baf971727.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
   </head>
-
+  <!-- remove div logo -->
   <body>
-    <div class="container1">
-      <header class="header">
-        <div class="logo">
-          <span id="logo" class="fab fa-accusoft fa-2x"></span>
-          <h1>TODO!</h1>
+    <header class="header">
+      <span id="logo" class="fab fa-accusoft fa-2x"></span>
+      <h1>TODO!</h1>
+    </header>
+    <nav class="navbar">
+      <ul>
+        <li class="dropdown">
+          <span class="dropbtn">
+            Date filter
+            <div class="dropdown-content">
+              <input type="text" name="daterange" />
+            </div>
+          </span>
+        </li>
+        <li class="dropdown">
+          <span class="dropbtn">
+            Sorting
+            <div class="dropdown-content">
+              <span id="sort-default">Default</span>
+              <span id="sort-priority">Priority</span>
+              <span id="sort-alpha">Alphabetical</span>
+            </div>
+          </span>
+        </li>
+        <li class="dropdown">
+          <span href="#" class="dropbtn">
+            Partner
+            <div id="partner" class="dropdown-content">
+              <span id="partner-0">All</span>
+            </div>
+          </span>
+        </li>
+        <div class="search">
+          <input type="text" name="search" id="search" placeholder="Search for tasks" />
         </div>
-      </header>
-      <nav class="navbar">
-        <ul>
-          <li class="dropdown">
-            <a href="#" class="dropbtn">
-              Date filter
-
-              <div class="dropdown-content">
-                <a id="filter-day">Day</a>
-                <a id="filter-week">Week</a>
-                <a id="filter-month"> Month</a>
-              </div>
-            </a>
-          </li>
-          <li class="dropdown">
-            <a class="dropbtn">
-              Sorting
-              <!-- priority , alphabetical, etc  -->
-              <div class="dropdown-content">
-                <a id="sort-priority">Priority</a>
-                <a id="sort-alpha">Alphabetical</a>
-              </div>
-            </a>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropbtn">
-              Partner
-              <div id="partner" class="dropdown-content">
-                <a id="partner-0">All</a>
-              </div>
-            </a>
-          </li>
-          <div class="search">
-            <input type="text" name="search" id="search" placeholder="Search for tasks" />
+      </ul>
+    </nav>
+    <main class="container">
+      <section class="section" id="section-1">
+        <h4>
+          <b>Tasks</b>
+        </h4>
+        <div class="orderByWrapper">
+          <span id="status">DEFAULT</span>
+          <div class="orderBy">
+            <i class="fas fa-caret-up fa-lg" id="order-up"></i>
+            <i class="fas fa-caret-down fa-lg" id="order-down"></i>
           </div>
-        </ul>
-      </nav>
-      <div class="box" id="box1">
-        <input type="text" id="box3" placeholder="Chat with us" />
-      </div>
-      <div class="container">
-        <div class="item" id="item-2">
-          <h4>
-            <b>Tasks</b>
-          </h4>
-          <ul class="task-list"></ul>
         </div>
-        <div class="item" id="item-1">
-          <h2>Add Tasks</h2>
-          <form id="form">
-            <div class="button">
-              <label for="name"> Name: </label>
-              <input type="text" name="myName" id="myName" required />
-            </div>
-            <div class="button">
-              <label for="myText">Description: </label>
-              <br /><textarea id="myText" name="myText" cols="80%" rows="7"></textarea>
-            </div>
-            <div class="button">
-              Date:
-              <input type="date" name="myDate" id="myDate" />
-            </div>
-            <div class="button">
-              Time for reminder:
-              <input type="time" steps="0.001" name="myTime" id="myTime" />
-            </div>
-            <div>
-              <label for="myPartner">Name of task partner </label>
-              <input name="myPartner" id="myPartner" />
-            </div>
-            <div>
-              <label for="priority">Priority &nbsp;</label>
-              <select name="myPriority" id="myPriority">
-                <option value="1">High</option>
-                <option value="0" selected>Medium</option>
-                <option value="-1">Low</option>
-              </select>
-            </div>
-            <div>
-              <button id="submit">Submit!</button>
-              <button type="reset" id="reset">Reset!</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+        <ul class="task-list"></ul>
+      </section>
+      <section class="section" id="section-2">
+        <h2>Add Tasks</h2>
+        <form id="form">
+          <div class="form-section">
+            <label for="name"> Name: </label>
+            <input type="text" name="taskName" id="taskName" required />
+          </div>
+          <div class="form-section">
+            <label for="taskText">Description: </label>
+            <br /><textarea id="taskText" name="taskText" cols="80%" rows="7"></textarea>
+          </div>
+          <div class="form-section">
+            <label for="taskDate">Date:</label>
+            <input type="date" name="taskDate" id="taskDate" />
+          </div>
+          <div class="form-section">
+            <label for="taskTime">Time for reminder:</label>
+            <input type="time" name="taskTime" id="taskTime" min=/>
+          </div>
+          <div class="form-selection">
+            <label for="taskPartner">Name of task partner </label>
+            <input name="taskPartner" id="taskPartner" />
+          </div>
+          <div class="form-section">
+            <label for="priority">Priority &nbsp;</label>
+            <select name="taskPriority" id="taskPriority">
+              <option value="1">High</option>
+              <option value="0" selected>Medium</option>
+              <option value="-1">Low</option>
+            </select>
+          </div>
+          <div class="form-section">
+            <button id="submit">Submit!</button>
+            <button type="reset" id="reset">Reset!</button>
+          </div>
+        </form>
+      </section>
+    </main>
   </body>
-  <script src="script.js"></script>
+  <script src="lib/script.js"></script>
 </html>
