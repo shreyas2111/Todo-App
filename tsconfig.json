@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+      "target": "esnext",
+      "module": "commonjs",
+      "outDir": "lib",
+      "strict": true,
+      "strictBindCallApply": true,
+      "strictFunctionTypes": true,
+      "strictNullChecks": true,
+      "declaration": true,
+      "esModuleInterop": true,
+      // "allowJs": true,
+      "sourceMap": true,
+      // "moduleResolution": "node",
+      // "allowSyntheticDefaultImports": true 
+    },
+    "include": ["./**/*"]
+  }

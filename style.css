@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,44 +12,34 @@
   --button-inside: #f5fcfe;
 }
 
-.container1 {
+body {
   height: 98vh;
-  /* border: 2px solid black; */
   padding: 10px;
   margin: 0;
   font-family: 'PT Sans', sans-serif;
   font-size: calc(0.7rem + 0.5vw);
-  /* line-height: calc(1.1rem + 0.5vw); */
-  color: var(--on-surface);
+
   background-color: var(--background);
 }
 
 .header {
-  /* border: 2px solid red; */
-  /* margin: auto; */
+  color: var(--on-surface);
   width: 100%;
   text-align: left;
-  /* margin: 2px; */
-  /* padding: 10px; */
-}
-
-h1 {
-  display: inline-block;
-  margin: 0 10px;
-  /* padding: 10px; */
-}
-.logo {
   background-color: var(--surface);
   padding: 10px;
   margin: 2px;
   border-radius: 10px;
 }
 
+h1 {
+  display: inline-block;
+  margin: 0 10px;
+}
+
 .navbar {
   background-color: var(--surface2);
-  margin: 2px;
-  margin-top: 10px;
-  margin-bottom: -40px;
+  margin: 10px 2px;
   border-radius: 10px;
 }
 
@@ -64,13 +53,13 @@ h1 {
   margin: 13px 20px;
 }
 
-.navbar li a {
+.navbar li span {
   padding: 3px 3px;
   text-decoration: none;
   color: white;
 }
 
-.navbar li a:hover {
+.navbar li span:hover {
   color: rgb(110, 22, 253);
 }
 
@@ -80,25 +69,24 @@ h1 {
   padding: 12px 75px;
 }
 
-.navbar input {
+.navbar ul > div input {
   border: 2px solid black;
   border-radius: 14px;
   padding: 3px 17px;
   width: 160px;
 }
+
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: rgb(40, 204, 245);
   min-width: 160px;
-  /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
   z-index: 1;
-  /* color: rgb(156, 24, 7); */
   border-radius: 10px;
   padding: 10px;
 }
 
-.dropdown-content a {
+.dropdown-content span {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -110,49 +98,52 @@ h1 {
   flex-direction: column;
 }
 
-.box {
-  display: inline-block;
-  margin: 2px;
-}
-
-#box1 {
-  position: sticky;
-  top: 95%;
-  float: right;
-  color: white;
-  padding: 15px;
-}
-
 .container {
-  height: 83vh;
+  height: 86vh;
   width: 100%;
-  /* border: 2px solid black; */
   display: flex;
   gap: 5px;
 }
 
-.item {
-  /* width: 50%; */
+.section {
   height: 96%;
+  color: var(--on-surface);
   background-color: var(--surface);
   border-radius: 10px;
   margin: 2px;
-  /* padding: 10px; */
 }
 
-#item-2 h4 {
+#section-1 h4 {
   font-size: 2em;
   text-align: center;
   padding: 10px;
   margin: 2px;
 }
 
-#item-2 {
+#section-1 {
   flex-grow: 2;
   overflow-x: hidden;
   overflow-y: scroll;
-  /* font-size: 1.5em; */
-  /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+}
+
+.orderBy {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  /* align-items: flex-end; */
+}
+
+.orderByWrapper {
+  display: flex;
+  gap: 15px;
+  font-size: 1.25em;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+}
+
+#order-up {
+  display: none;
 }
 
 .task-list {
@@ -176,19 +167,23 @@ h1 {
   border-radius: 5px;
   background-color: var(--button-inside);
 }
+
 .complete:hover {
   background-color: rgb(184, 179, 179);
 }
+
 .fas {
   float: right;
   padding-right: 10px;
   padding-top: 1px;
 }
-#item-1 input,
-#item-1 select,
-#item-2 button {
+
+#section-2 input,
+#section-2 select,
+#section-1 button {
   font-size: 1em;
 }
+
 .task-description {
   display: none;
   border: 2px solid black;
@@ -199,22 +194,25 @@ h1 {
   width: 350px;
   background-color: var(--surface2);
 }
+
 .task-description ul {
   list-style-type: disc;
 }
+
 .task:hover .task-description {
   position: absolute;
   display: flex;
   flex-direction: column;
-  /* justify-content: flex-end; */
+
   overflow-y: scroll;
 }
 
-#item-1 {
+#section-2 {
   width: 40%;
   font-size: 1em;
 }
-#item-1 h2 {
+
+#section-2 h2 {
   font-size: 2em;
   text-align: center;
   padding: 10px;

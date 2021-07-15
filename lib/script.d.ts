@@ -1,0 +1,30 @@
+declare function newError(): void;
+declare class Task {
+    name: string;
+    desc: string;
+    date: string;
+    time: string;
+    partner: string;
+    priority: string;
+    id: number;
+    constructor(name: string, desc: string, date: string, time: string, partner: string | undefined, priority: string, id: number);
+}
+declare let tasks: Task[];
+declare let partners: string[];
+declare let editBool: boolean;
+declare let editId: number;
+declare let i: number;
+declare let partner_index: number;
+declare let lastSort: string;
+declare let sortUp: HTMLElement;
+declare let sortDown: HTMLElement;
+declare function add(task: Task): void;
+declare let sub: HTMLElement;
+declare function sort(how: string, sign: number): void;
+declare let section1: HTMLElement;
+declare let resetButton: HTMLElement;
+declare let prioritySort: HTMLElement;
+declare let alphabeticalSort: HTMLElement;
+declare let defaultSort: HTMLElement;
+declare let search: HTMLElement;
+declare let defaultPart: HTMLElement;
